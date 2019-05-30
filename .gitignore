@@ -1,1 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/
+BTM_output/
+DataProcess.iml
+ganjun_testdata/
+src/main/java/textprocess/a
+target/

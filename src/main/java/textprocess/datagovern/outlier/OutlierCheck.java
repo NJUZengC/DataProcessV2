@@ -7,7 +7,7 @@ import java.util.*;
  * @date 2018/10/10 20:33
  */
 public class OutlierCheck {
-
+	//异常值检测，设定sigma值，返回是否为异常值
     public static ArrayList<Boolean> number3Sigma(ArrayList<Double> source, double sigmaPara) {
         ArrayList<Boolean> res = new ArrayList<Boolean>();
         double sum = 0;
@@ -29,6 +29,7 @@ public class OutlierCheck {
         return res;
     }
 
+		//异常值检测，4分位法检测，返回是否为异常值
     public static ArrayList<Boolean> number4Slot(ArrayList<Double> source) {
         ArrayList<Boolean> res = new ArrayList<Boolean>();
         int length = source.size();
@@ -63,6 +64,7 @@ public class OutlierCheck {
         return res;
     }
 
+		//异常值检测，小于特定频率的字符串判定为异常值，返回是否为异常值
     public static ArrayList<Boolean> stringFrequency(ArrayList<String> source,int minFrequency){
         ArrayList<Boolean> res = new ArrayList<Boolean>();
         Map<String,Integer> freq = new HashMap<>();
@@ -84,12 +86,12 @@ public class OutlierCheck {
 
     public static void main(String [] a) {
         ArrayList<Double> copy = new ArrayList<>();
-        copy.add(1.0);
-        copy.add(0.6);
-        copy.add(1.5);
-        copy.add(1.5);
-        copy.add(1.5);
-        copy.add(4.0);
-        System.out.println(number3Sigma(copy,3));
+        copy.add(79d);
+        copy.add(87d);
+        copy.add(0d);
+        copy.add(69d);
+        copy.add(72d);
+        copy.add(84d);
+        System.out.println(number4Slot(copy));
     }
 }

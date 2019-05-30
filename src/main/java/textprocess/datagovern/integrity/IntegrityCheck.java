@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * @date 2018/10/10 9:36
  */
 public class IntegrityCheck {
-
+	//特殊值填充，传入一列数据和特殊值，对这列数据中为空的项更改为特殊值返回
     public static ArrayList<String> stringSpecalPad(ArrayList<String> source,String specialWord){
         ArrayList<String> res = new ArrayList<String>();
         for(String s:source){
@@ -26,6 +26,7 @@ public class IntegrityCheck {
         return res;
     }
 
+	//特殊值填充，传入一列数据和特殊值，对这列数据中为空的项更改为特殊值返回
     public static ArrayList<Double> numberSpecalPad(ArrayList<Double> source,Double specialNumber,double emptyNumber){
         ArrayList<Double> res = new ArrayList<Double>();
         final double epsilon = 0.000001;
@@ -38,6 +39,7 @@ public class IntegrityCheck {
         return res;
     }
 
+	//均值填充，传入源数据，将等于emptyNumber的数据项更改为平均值
     public static ArrayList<Double> numberMeanPad(ArrayList<Double> source,double emptyNumber){
         ArrayList<Double> res = new ArrayList<Double>();
         final double epsilon = 0.000001;
@@ -62,6 +64,7 @@ public class IntegrityCheck {
         return res;
     }
 
+	//这个可先不测试
     public static ArrayList<String> hotDeckPad(Map<String,ArrayList<String>> stringSource, Map<String,ArrayList<Double>> doubleSource,ArrayList<String> padString,Map<String,Double> ratio,String vecPath)throws Exception{
         final double epsilon = 0.000001;
         ArrayList<String> resString = new ArrayList<String>();
